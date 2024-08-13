@@ -1,6 +1,6 @@
 ---
 - name: first playbook
-  hosts: all
+  hosts: localhost 
   become: yes
   tasks:
     - name: install httpd software
@@ -13,7 +13,7 @@
         state: started
     - name: copying the files
       copy:
-        src: /var/lib/jenkins/workspace/deploy-angular-app-ansible/dist/akbar-app/
+        src: /var/lib/jenkins/workspace/deploy-angular-app-ansible/dist/robuzz-app/
         dest: /var/www/html/
     - name: restart server
       service:
